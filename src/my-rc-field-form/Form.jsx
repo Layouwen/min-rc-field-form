@@ -1,18 +1,16 @@
-import { useEffect } from "react";
+import FieldContext from "./FieldContext";
+
 const Form = ({ children, form, onFinish }) => {
-  useEffect(() => {
-    form.setCallbacks({ onFinish });
-  }, []);
+  form.setCallbacks({ onFinish });
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        console.log(e, 'onSubmit')
         form.submit();
       }}
     >
-      {children}
+      <FieldContext.Provider value={form}>{children}</FieldContext.Provider>
     </form>
   );
 };

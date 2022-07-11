@@ -14,18 +14,23 @@ class FormStore {
     return this.store[fieldName];
   };
 
+  setFieldValue = (newValue) => {
+    this.store = {
+      ...this.store,
+      ...newValue,
+    };
+  };
+
   setCallbacks = (callbacks) => {
     this.callbacks = {
       ...this.callbacks,
       ...callbacks,
     };
-    console.log(this.callbacks)
   };
 
   onSubmit = () => {
     const { onFinish } = this.callbacks;
     onFinish();
-    console.log("onFinish");
   };
 
   getForm = () => {
@@ -34,6 +39,7 @@ class FormStore {
       getFieldValue: this.getFieldValue,
       setCallbacks: this.setCallbacks,
       submit: this.onSubmit,
+      setFieldValue: this.setFieldValue,
     };
   };
 }
