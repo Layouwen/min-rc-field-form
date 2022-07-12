@@ -84,11 +84,15 @@ class FormStore {
   };
 }
 
-const useForm = () => {
+const useForm = (form) => {
   const ref = useRef();
   if (!ref.current) {
-    const store = new FormStore();
-    ref.current = store.getForm();
+    if (form) {
+      ref.current = form;
+    } else {
+      const store = new FormStore();
+      ref.current = store.getForm();
+    }
   }
   return [ref.current];
 };
