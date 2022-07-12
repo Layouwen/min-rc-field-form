@@ -4,18 +4,33 @@ import FieldContext from "./FieldContext";
 class Field extends Component {
   static contextType = FieldContext;
 
-  render() {
-    const { name, children } = this.props;
+  componentDidMount() {
+    const { registerFieldEntries } = this.context;
+    this.unRegitser = registerFieldEntries(this);
+  }
+
+  componentWillUnmount() {
+    this.unRegitser();
+  }
+
+  getControlled() {
     const { getFieldValue, setFieldValue } = this.context;
-    return React.cloneElement(children, {
-      value: getFieldValue(name) || "",
+    const { name } = this.props;
+
+    return {
+      value: getFieldValue(name),
       onChange: (e) => {
         const newValue = e.target.value;
         setFieldValue({
           [name]: newValue,
         });
       },
-    });
+    };
+  }
+
+  render() {
+    const { children } = this.props;
+    return React.cloneElement(children, this.getControlled());
   }
 }
 
