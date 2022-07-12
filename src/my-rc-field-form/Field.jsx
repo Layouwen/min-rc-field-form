@@ -8,7 +8,7 @@ class Field extends Component {
     const { name, children } = this.props;
     const { getFieldValue, setFieldValue } = this.context;
     return React.cloneElement(children, {
-      value: getFieldValue(name),
+      value: getFieldValue(name) || "",
       onChange: (e) => {
         const newValue = e.target.value;
         setFieldValue({
