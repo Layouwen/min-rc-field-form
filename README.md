@@ -2,11 +2,20 @@
 
 帮助你快速了解 [rc-field-form](https://github.com/react-component/field-form) 的实现方式。
 
+## 目录
+
+- [前言](#前言)
+- [原仓库 Demo](#原仓库 Demo)
+- [本仓库 Demo](#本仓库 Demo)
+    - [Function Component](#Function Component)
+    - [Class Component](#Class Component)
+- [如何交流](#如何交流)
+
 ## 前言
 
 这个仓库的实现总的思路是一致的，但实现细节会有所不同。你可以通过学习本仓库的代码后，继续浏览 `rc-field-form` 的源码进行补充学习。
 
-## 原仓库的 Demo
+## 原仓库 Demo
 
 ```js
 import Form, { Field } from 'rc-field-form';
@@ -35,7 +44,7 @@ const Demo = () => {
 export default Demo;
 ```
 
-## 本仓库的 Demo
+## 本仓库 Demo
 
 原则上，你可以通过原仓库的 Demo 中的 import 路径替换为。本仓库中的 my-rc-field-form 路径进行演示。本仓库的例子中添加了 rules 的简单实现，所以有所不同。
 
@@ -116,3 +125,7 @@ class App extends Component {
   }
 }
 ```
+
+## 如何交流
+
+可以添加个人微信 `gdgzyw`，或者发送邮箱 `layouwen@gmail.com`。
