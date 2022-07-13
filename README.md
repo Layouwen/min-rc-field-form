@@ -5,10 +5,10 @@
 ## 目录
 
 - [前言](#前言)
-- [原仓库 Demo](#原仓库 Demo)
-- [本仓库 Demo](#本仓库 Demo)
-    - [Function Component](#Function Component)
-    - [Class Component](#Class Component)
+- [原仓库Demo](#原仓库-demo)
+- [本仓库Demo](#本仓库-demo)
+    - [Function&nbsp;Component](#function-component)
+    - [Class&nbsp;Component](#class-component)
 - [如何交流](#如何交流)
 
 ## 前言
